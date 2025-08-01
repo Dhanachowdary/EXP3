@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample E-Commerce Store</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+
+    <header>
+        <h1>Sample E-Commerce Store</h1>
+        <button class="cart-btn" onclick="toggleCart()">🛒 Cart (<span id="cart-count">0</span>)</button>
+    </header>
+
+    <div class="products">
+        <div class="product" id="iphone-13">
+            <img src="https://www.imagineonline.store/cdn/shop/files/iPhone_13_Starlight_PDP_Image_Position-1A__GBEN.jpg?v=1692412588" alt="iphone 13">
+            <h3>iPhone 13</h3>
+            <p>$20.00</p>
+            <button class="add-btn" data-name="iPhone 13" data-price="20.00">Add to Cart</button>
+        </div>
+
+        <div class="product" id="iphone-14">
+            <img src="https://m.media-amazon.com/images/I/61bK6PMOC3L._UF1000,1000_QL80_.jpg" alt="iphone 14">
+            <h3>iPhone 14</h3>
+            <p>$30.00</p>
+            <button class="add-btn" data-name="iPhone 14" data-price="30.00">Add to Cart</button>
+        </div>
+
+        <div class="product" id="iphone-15">
+            <img src="https://media.tatacroma.com/Croma%20Assets/Communication/Mobiles/Images/300652_0_mwimne.png" alt="iphone 15">
+            <h3>iPhone 15</h3>
+            <p>$40.00</p>
+            <button class="add-btn" data-name="iPhone 15" data-price="40.00">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <h2>Your Cart</h2>
+            <ul id="cart-items">
+                <!-- Cart items will appear here -->
+            </ul>
+            <p>Total Items: <span id="total-items">0</span></p>
+            <button onclick="clearCart()">Clear Cart</button>
+            <button onclick="toggleCart()">Close</button>
+        </div>
+    </div>
+
+    <script src="script1.js"></script>
+</body>
+</html>

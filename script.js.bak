@@ -1,0 +1,43 @@
+let cart = [];
+
+document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll(".add-btn");
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+            const name = button.dataset.name;
+            const price = button.dataset.price;
+            addToCart(name, price);
+        });
+    });
+});
+
+function addToCart(name, price) {
+    cart.push({ name, price });
+    updateCartDisplay();
+}
+
+function updateCartDisplay() {
+    const cartCount = document.getElementById("cart-count");
+    const cartItems = document.getElementById("cart-items");
+    const totalItems = document.getElementById("total-items");
+
+    cartCount.innerText = cart.length;
+    totalItems.innerText = cart.length;
+
+    cartItems.innerHTML = "";
+    cart.forEach(item => {
+        const li = document.createElement("li");
+        li.innerText = `${item.name} - $${item.price}`;
+        cartItems.appendChild(li);
+    });
+}
+
+function toggleCart() {
+    const modal = document.getElementById("cart-modal");
+    modal.style.display = modal.style.display === "block" ? "none" : "block";
+}
+
+function clearCart() {
+    cart = [];
+    updateCartDisplay();
+}
